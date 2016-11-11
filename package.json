@@ -1,0 +1,12 @@
+{
+  "name": "partylines",
+  "version": "1.0.0",
+  "description": "political party simulation",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/leecookson/partylines.git",
+    "type": "git"
+  },
+  "author": "leecookson@gmail.com",
+  "license": "MIT"
+}
