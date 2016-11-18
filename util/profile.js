@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
 const ELEMENT_IDS = [
-  'S', 'F', 'D', 'T', 'L'
+  's', 'f', 'd', 't', 'l'
 ];
 
 const ELEMENTS = {
