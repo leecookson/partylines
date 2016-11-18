@@ -4,7 +4,7 @@
   "description": "political party simulation",
   "main": "index.js",
   "bin": {
-    "party": "./cli"
+    "party": "./bin"
   },
   "repository": {
     "url": "https://github.com/leecookson/partylines.git",
@@ -19,7 +19,8 @@
     "sinon": "^1.17.6"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/**/*.js"
+    "test": "./node_modules/mocha/bin/mocha test/**/*.js",
+    "party": "node ./bin"
   },
   "dependencies": {
     "lodash": "^4.16.6"
