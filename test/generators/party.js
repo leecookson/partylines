@@ -8,18 +8,18 @@ describe('party', () => {
   });
   it('has elements', () => {
     const p1 = party.create();
-    p1.F.should.exist;
-    p1.S.should.exist;
-    p1.D.should.exist;
-    p1.T.should.exist;
-    p1.L.should.exist;
+    p1.f.should.exist;
+    p1.s.should.exist;
+    p1.d.should.exist;
+    p1.t.should.exist;
+    p1.l.should.exist;
   });
   it('has elements as integers', () => {
     const p1 = party.create();
-    p1.F.should.be.within(1, 4);
-    p1.S.should.be.within(1, 4);
-    p1.D.should.be.within(1, 4);
-    p1.T.should.be.within(1, 4);
-    p1.L.should.be.within(1, 4);
+    p1.f.should.be.within(1, 4);
+    p1.s.should.be.within(1, 4);
+    p1.d.should.be.within(1, 4);
+    p1.t.should.be.within(1, 4);
+    p1.l.should.be.within(1, 4);
   });
 });
