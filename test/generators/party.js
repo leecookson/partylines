@@ -1,3 +1,4 @@
+
 const should = require('should');
 const party = require('../../generators/party');
 

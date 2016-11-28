@@ -23,6 +23,7 @@
     "party": "node ./bin"
   },
   "dependencies": {
-    "lodash": "^4.16.6"
+    "lodash": "^4.16.6",
+    "sprintf": "^0.1.5"
   }
 }

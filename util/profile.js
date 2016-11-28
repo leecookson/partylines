@@ -52,7 +52,17 @@ module.exports = {
     return profile;
   },
 
-  getElementName: function (element) {
+  calculateExtremism: (profile) => {
+    const total = _.reduce(ELEMENT_IDS, (accumulator, value) => {
+      const margin = Math.abs(profile[value] - 2.5);
+      return accumulator + margin;
+    }, 0);
+
+    profile.extremism = Math.round((total - 2.5) * 8 / 4.5) + 1;
+    return profile.extremism;
+  },
+
+  getElementName: (element) => {
     return ELEMENTS[element];
   },
 

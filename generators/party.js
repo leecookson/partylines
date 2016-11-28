@@ -4,7 +4,7 @@ const profile = require('../util/profile');
 
 module.exports = {
 
-  create: function () {
+  create: () => {
     return profile.create();
   }
 
