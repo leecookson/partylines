@@ -1,11 +1,19 @@
+const _ = require('lodash');
 
 const profile = require('../util/profile');
 
+let lastID = 1;
 
 module.exports = {
 
-  create: () => {
-    return profile.create();
+  create: (opts) => {
+    const DEFAULT = {
+      name: 'party',
+      id: opts.id ? opts.id : lastID++
+    };
+    opts = _.defaults(opts, DEFAULT);
+
+    return profile.create({name: opts.name, id: opts.id});
   }
 
 };

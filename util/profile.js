@@ -22,7 +22,8 @@ module.exports = {
 
   create: function (opts) {
     const DEFAULT = {
-      elements: ELEMENT_IDS
+      elements: ELEMENT_IDS,
+      name: 'profile'
     };
     opts = _.defaults(opts, DEFAULT);
     let profile = {};
@@ -42,12 +43,17 @@ module.exports = {
       throw new Error(elementsValueMessage);
     }
 
-    profile.name = '';
+    profile.codeName = '';
     ELEMENT_IDS.forEach((el) => {
       if (profile[el]) {
-        profile.name += el + profile[el];
+        profile.codeName += el + profile[el];
       }
     });
+
+    profile.name = opts.name;
+    if (typeof opts.id !== 'undefined' && opts.id !== null) {
+      profile.id = opts.id;
+    }
 
     return profile;
   },

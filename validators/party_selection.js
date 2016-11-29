@@ -12,7 +12,9 @@ module.exports = {
    *
    */
   validateParties: (parties, options) => {
+    _.each(parties, (party) => {
 
+    });
   }
 
 };

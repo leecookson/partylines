@@ -1,8 +1,4 @@
 
-
-const profile = require('../util/profile');
-
-
 module.exports = {
 
   matchVoters: function (party, voters) {

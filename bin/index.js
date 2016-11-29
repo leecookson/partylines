@@ -19,10 +19,10 @@ var parties = [],
 
 console.log('Parties:');
 for (var i = 0; i < numParties; i++) {
-  let p = party.create();
+  let p = party.create({name: 'Party ' + (i + 1)});
   profile.calculateExtremism(p);
   extremismCount[p.extremism] = extremismCount[p.extremism] ? extremismCount[p.extremism] += 1 : 1;
-  if (numParties < 24) console.log(p);
+  if (numParties < 24) {console.log(p);}
   p.voters = [];
   parties.push(p);
 }
@@ -32,8 +32,8 @@ console.log('Extremism spread', extremismCount);
 
 console.log('Bills:');
 for (var j = 0; j < numBills; j++) {
-  let b = bill.create({elements: _.random(1,2)});
-  if (numBills < 24) console.log(b);
+  let b = bill.create({elements: _.random(1,2), name: 'Bill ' + (j + 1)});
+  if (numBills < 24) {console.log(b);}
   bills.push(b);
 }
 console.log(numBills, 'created');
@@ -41,8 +41,8 @@ console.log(numBills, 'created');
 console.log('Voters:');
 
 for (var k = 0; k < numVoters; k++) {
-  let v = voter.create();
-  if (numVoters < 24) console.log(v);
+  let v = voter.create({name: 'Voter ' + (k + 1)});
+  if (numVoters < 24) {console.log(v);}
   v.parties = [];
   voters.push(v);
 }
@@ -51,7 +51,7 @@ console.log(numVoters, 'created');
 if (numParties < 24) {
   _.forEach(parties, (party, pIndex) => {
     _.forEach(voters, (voter) => {
-      let match = degreeMatch.simpleMatch(voter, parties[pIndex], 4);
+      let match = degreeMatch.profileMatch(voter, parties[pIndex], 5);
       if (match) {
         voter.parties.push(party);
         party.voters.push(voter);
