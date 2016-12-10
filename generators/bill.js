@@ -7,9 +7,10 @@ let lastID = 1;
 module.exports = {
 
   create: function (opts) {
+    opts = opts || {};
     const DEFAULT = {
       elements: profile.getElementIDs(),
-      id: opts.id ? opts.id : lastID++
+      id: opts ? opts.id : lastID++
     };
     opts = _.defaults(opts, DEFAULT);
 

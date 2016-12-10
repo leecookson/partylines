@@ -7,6 +7,7 @@ let lastID = 1;
 module.exports = {
 
   create: function (opts) {
+    opts = opts || {};
     const DEFAULT = {
       name: 'voter',
       id: opts.id ? opts.id : lastID++

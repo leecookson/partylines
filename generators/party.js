@@ -7,6 +7,7 @@ let lastID = 1;
 module.exports = {
 
   create: (opts) => {
+    opts = opts || {};
     const DEFAULT = {
       name: 'party',
       id: opts.id ? opts.id : lastID++
