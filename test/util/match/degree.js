@@ -38,6 +38,32 @@ const profile5 = {
   l: 5
 };
 
+const partialProfile1 = {
+  f: 1
+}
+
+const partialProfile1t = {
+  t: 1
+}
+
+const partialProfile2 = {
+  f: 2,
+  s: 2
+}
+
+const partialProfile3 = {
+  f: 3,
+  s: 3,
+  d: 3
+}
+
+const partialProfile4 = {
+  f: 4,
+  s: 4,
+  d: 4,
+  t: 4
+}
+
 describe('degree', () => {
   describe('elementDifference', () => {
 
@@ -90,6 +116,18 @@ describe('degree', () => {
       const v1 = degree.profileDifference(profile3, profile1);
       v1.should.equal(10);
     });
+    it('returns 2 for profile 3, partialProfile 1', () => {
+      const v1 = degree.profileDifference(profile3, partialProfile1);
+      v1.should.equal(2);
+    });
+    it('returns 6 for profile 5, partialProfile 3', () => {
+      const v1 = degree.profileDifference(profile5, partialProfile3);
+      v1.should.equal(6);
+    });
+    it('returns 0 for partialProfile 3, partialProfile 1 t', () => {
+      const v1 = degree.profileDifference(partialProfile3, partialProfile1t);
+      v1.should.equal(0);
+    });
 
   });
 
@@ -121,51 +159,51 @@ describe('degree', () => {
   describe('simpleMatch', () => {
 
     it('returns true for same profile, degree 0', () => {
-      const v1 = degree.simpleMatch(profile1, profile1, 0);
+      const v1 = degree.degreeMatch(profile1, profile1, 0);
       v1.should.equal(true);
     });
     it('returns true for same profile, degree 1', () => {
-      const v1 = degree.simpleMatch(profile1, profile1, 1);
+      const v1 = degree.degreeMatch(profile1, profile1, 1);
       v1.should.equal(true);
     });
     it('returns true for same profile, degree 2', () => {
-      const v1 = degree.simpleMatch(profile1, profile1, 2);
+      const v1 = degree.degreeMatch(profile1, profile1, 2);
       v1.should.equal(true);
     });
     it('returns true for same profile, degree 99', () => {
-      const v1 = degree.simpleMatch(profile1, profile1, 99);
+      const v1 = degree.degreeMatch(profile1, profile1, 99);
       v1.should.equal(true);
     });
     it('returns false for profile 1, profile 2, degree 0', () => {
-      const v1 = degree.simpleMatch(profile1, profile2, 0);
+      const v1 = degree.degreeMatch(profile1, profile2, 0);
       v1.should.equal(false);
     });
     it('returns true for profile 1, profile 2, degree 1', () => {
-      const v1 = degree.simpleMatch(profile1, profile2, 1);
+      const v1 = degree.degreeMatch(profile1, profile2, 1);
       v1.should.equal(true);
     });
     it('returns true for profile 1, profile 2, degree 2', () => {
-      const v1 = degree.simpleMatch(profile1, profile2, 2);
+      const v1 = degree.degreeMatch(profile1, profile2, 2);
       v1.should.equal(true);
     });
     it('returns true for profile 1, profile 2, degree 99', () => {
-      const v1 = degree.simpleMatch(profile1, profile2, 99);
+      const v1 = degree.degreeMatch(profile1, profile2, 99);
       v1.should.equal(true);
     });
     it('returns false for profile 1, profile 5, degree 0', () => {
-      const v1 = degree.simpleMatch(profile1, profile5, 0);
+      const v1 = degree.degreeMatch(profile1, profile5, 0);
       v1.should.equal(false);
     });
     it('returns false for profile 1, profile 5, degree 3', () => {
-      const v1 = degree.simpleMatch(profile1, profile5, 3);
+      const v1 = degree.degreeMatch(profile1, profile5, 3);
       v1.should.equal(false);
     });
     it('returns true for profile 1, profile 5, degree 4', () => {
-      const v1 = degree.simpleMatch(profile1, profile5, 4);
+      const v1 = degree.degreeMatch(profile1, profile5, 4);
       v1.should.equal(true);
     });
     it('returns true for profile 1, profile 5, degree 99', () => {
-      const v1 = degree.simpleMatch(profile1, profile5,99);
+      const v1 = degree.degreeMatch(profile1, profile5,99);
       v1.should.equal(true);
     });
 
