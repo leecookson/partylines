@@ -19,7 +19,7 @@
     "sinon": "^1.17.6"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/**/*.js",
+    "test": "./node_modules/mocha/bin/mocha test/**/*.js test/util/match/*.js",
     "test-watch": "./node_modules/mocha/bin/mocha -w test/**/*.js",
     "party": "node ./bin"
   },
