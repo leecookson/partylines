@@ -8,6 +8,8 @@ const party = require('../generators/party');
 const bill = require('../generators/bill');
 const voter = require('../generators/voter');
 
+const partyMatcher = require('../matchers/party');
+
 const numParties = process.argv[2] || 10;
 const numBills = process.argv[3] || 10;
 const numVoters = process.argv[4] || 10;
@@ -61,3 +63,15 @@ if (numParties < 24) {
     console.log('party', pIndex, 'has', party.voters.length, 'from', numVoters);
   });
 }
+
+partyMatcher.matchVoters(parties[0], voters);
+
+console.log('Party 0 matches', parties[0].potentialVoters.length, 'voters');
+
+partyMatcher.matchCandidates(parties[0], voters);
+
+console.log('Party 0 matches', parties[0].potentialCandidates.length, 'candidates');
+
+partyMatcher.matchBills(parties[0], bills);
+
+console.log('Party 0 matches', parties[0].billsSupported.length, 'bills');
