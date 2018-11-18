@@ -24,5 +24,5 @@ module.exports = {
 };
 
 function toString () {
-  return printf('[% 5s] % 12s - %s', this.id, this.name, profile.generateCodeNameColor(this));
+  return printf('[% 5s] %- 12s - %s', this.id, this.name, profile.generateCodeNameColor(this));
 }

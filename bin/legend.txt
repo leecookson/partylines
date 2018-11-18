@@ -1,0 +1,26 @@
+
+Elements
+
+F: FISCAL
+S: SOCIAL
+D: DIPLOMACY
+T: TECH
+L: LAW
+
+
+Degrees
+
+1 - Very Conservative
+2 - Lean Conservative
+3 - Lean Liberal
+4 - Vary Liberal
+
+
+Matching
+
+0 is exact match
+1 means an element differs by 1 degree
+2 for a single elements means they differ by 2 degrees
+2 for a pair of elements means they collectively differ by 2 degrees
+    It could be each element differs by 1 degree
+    or one element matches and the other differs by 2 degrees

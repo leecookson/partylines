@@ -1,13 +1,14 @@
-const _ = require('lodash');
-const printf = require('printf');
-const c = require('colors');
+const fs = require('fs'),
+  _ = require('lodash'),
+  printf = require('printf'),
+  c = require('colors'),
+  argv = require('minimist')(process.argv.slice(2), {alias: {l: 'legend'}});
 
-const degreeMatch = require('../util/match/degree');
-const profile = require('../util/profile');
-
-const party = require('../generators/party');
-const bill = require('../generators/bill');
-const voter = require('../generators/voter');
+const degreeMatch = require('../util/match/degree'),
+  profile = require('../util/profile'),
+  party = require('../generators/party'),
+  bill = require('../generators/bill'),
+  voter = require('../generators/voter');
 
 const partyMatcher = require('../matchers/party');
 
@@ -20,6 +21,10 @@ var parties = [],
   voters = [],
   extremismCount = {};
 
+if (argv.legend) {
+  console.log(fs.readFileSync('./bin/legend.txt').toString());
+}
+
 console.log(c.green('Parties:'));
 for (var i = 0; i < numParties; i++) {
   let p = party.create({name: 'Party ' + (i + 1)});
@@ -31,7 +36,7 @@ for (var i = 0; i < numParties; i++) {
 }
 console.log(numParties, 'Parties');
 
-console.log('Extremism spread', extremismCount);
+//console.log('Extremism spread', extremismCount);
 
 console.log('\n');
 
