@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const printf = require('printf');
 
 const profile = require('../util/profile');
 
@@ -14,7 +15,14 @@ module.exports = {
     };
     opts = _.defaults(opts, DEFAULT);
 
-    return profile.create({name: opts.name, id: opts.id});
+    let party = profile.create({name: opts.name, id: opts.id});
+    party.toString = toString;
+
+    return party;
   }
 
 };
+
+function toString () {
+  return printf('[% 5s] % 12s - %s', this.id, this.name, profile.generateCodeNameColor(this));
+}

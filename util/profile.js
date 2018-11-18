@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const c = require('colors');
 
 const ELEMENT_IDS = [
   's', 'f', 'd', 't', 'l'
@@ -74,5 +75,47 @@ module.exports = {
 
   getElementIDs: function () {
     return ELEMENT_IDS;
+  },
+
+  generateCodeName: function (profile) {
+    let codeName = '';
+    ELEMENT_IDS.forEach((el) => {
+      if (profile[el]) {
+        codeName += el + profile[el];
+      }
+    });
+
+    return codeName;
+  },
+
+  generateCodeNameColor: function (profile) {
+    const colors = {
+      '1': c.bgGreen.bold,
+      '2': c.green.inverse,
+      '3': c.red.inverse,
+      '4': c.bgRed.bold
+    };
+    let codeName = '';
+
+    ELEMENT_IDS.forEach((el) => {
+
+      if (profile[el]) {
+        switch (profile[el]) {
+        case 1:
+          codeName += el + colors[profile[el]](profile[el]);
+          break;
+        case 2:
+          codeName += el + colors[profile[el]](profile[el]);
+          break;
+        case 3:
+          codeName += el + colors[profile[el]](profile[el]);
+          break;
+        case 4:
+          codeName += el + colors[profile[el]](profile[el]);
+        }
+      }
+    });
+
+    return codeName;
   }
 };

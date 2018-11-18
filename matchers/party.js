@@ -3,7 +3,7 @@ const degree = require('../util/match/degree');
 
 const VOTER_PARTY_DEGREE = 5;
 const VOTER_CANDIDATE_DEGREE = 2  ;
-const VOTER_BILL_DEGREE = 3;
+const VOTER_BILL_DEGREE = 2;
 
 module.exports = {
 
