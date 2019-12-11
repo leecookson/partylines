@@ -14,9 +14,9 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "^5.2.0",
-    "proxyquire": "^2.1.0",
+    "proxyquire": "^2.1.3",
     "should": "^13.2.3",
-    "sinon": "^7.1.1"
+    "sinon": "^7.5.0"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test/**/*.js test/util/match/*.js",
@@ -24,9 +24,9 @@
     "party": "node ./bin/index.js -l"
   },
   "dependencies": {
-    "colors": "^1.3.2",
-    "lodash": "^4.17.11",
+    "colors": "^1.4.0",
+    "lodash": "^4.17.15",
     "minimist": "^1.2.0",
-    "printf": "^0.5.1"
+    "printf": "^0.5.2"
   }
 }
